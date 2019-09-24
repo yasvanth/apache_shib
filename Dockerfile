@@ -15,9 +15,6 @@ RUN apt-get update \
     && apt-get -y install --install-recommends shibboleth \
     && mkdir /etc/apache2/ssl /etc/shibboleth/sp-certs\
     && rm /etc/apache2/sites-enabled/* \
-    && apt-get -y install \
-         php \
-         libapache2-mod-php  \
     && a2enmod ssl* proxy* request headers rewrite
 
 COPY httpd-shibd-foreground.sh /
